@@ -9,7 +9,7 @@ arch=('x86_64')
 PACKAGER="TRS"
 license=('GPL3')
 makedepends=()
-depends=()
+depends=('gcc-libs' 'glibc')
 options=('!strip' 'docs' 'libtool' 'staticlibs' 'emptydirs' 'zipman' '!purge' '!debug' '!lto')
 
 prepare() {
@@ -31,5 +31,5 @@ package() {
     else
         install -Dm755 ./fview "${pkgdir}/usr/bin/fview"
     fi
-    
+    rm -rf ./src
 }

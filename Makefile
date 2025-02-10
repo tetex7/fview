@@ -24,8 +24,8 @@ else
 endif
 
 all:
-	g++ -std=gnu++2a $(GCC_FLAGS) -DFV_VER="\"$(RVER)\"" fview.cpp -o $(FNAME)
+	g++ -std=gnu++23 ${GCC_FLAGS} -DFV_VER="\"${RVER}\"" fview.cpp -o ${FNAME}
 #strip -s -o fview.exe fview.exe
 
 clean:
-	rm -f $(FNAME)
+	rm -f ${FNAME}
