@@ -59,7 +59,7 @@ std::vector<std::string> get_lines_cin()
 }
 
 #define REP_BUG_TEXT "Copyright (C) 2025  Tete.\nFor Docs and bug reporting\nplease see: <https://github.com/tetex7/fview>."
-extern "C" void help(int ecode = -0)
+void help(int ecode = 0)
 {
     cout_print("Usage: fview [options] [PATH_TO_FILE]\n");
     cout_print("FVIEW HELP:\n",
@@ -70,7 +70,6 @@ extern "C" void help(int ecode = -0)
     cout_print("\n\n");
     cout_print(FV_VER, '\n');
     cout_print(REP_BUG_TEXT, '\n');
-    if (ecode == -0) return;
     exit(ecode);
 }
 
@@ -80,7 +79,7 @@ int main(const int argc, const char** argv)
     const auto cmdl = argh::parser(argc, argv);
 
     if (cmdl[{"-h", "--help"}])
-        help();
+        help(0);
 
     if (cmdl[{"-n", "--no-head"}])
         SE_WAR = 0;
